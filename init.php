@@ -10,7 +10,7 @@ if (!file_exists($config_dir)) {
 }
 
 //Lê os dados do arquivo
-$db_config = parse_ini_file($config_dir);
+$db_config = parse_ini_file($config_dir, true);
 
 $port = $db_config['port'] ?? '3306';
 $host = $db_config['host'];
@@ -23,10 +23,10 @@ $conecta_pdo = "mysql:host=$host;port=$port;dbname=$name";
 
 //Monta a conexão com o banco de dados
 try {
-    $conn = new PDO($conecta_pdo, $user, $pass);  //Cria conexão PDO
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Seta os atributos de erros
-    $conn->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES utf8"); 
+  $conn = new PDO($conecta_pdo, $user, $pass);  //Cria conexão PDO
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Seta os atributos de erros
+  $conn->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES utf8");
 } catch (PDOException $error) {
-    echo "Falha na conexão com o banco de dados, Erro: <b>" . $error->getMessage() . "</b> Código do erro: " . $error->getCode();
-    die;
+  echo "Falha na conexão com o banco de dados, Erro: <b>" . $error->getMessage() . "</b> Código do erro: " . $error->getCode();
+  die;
 }
