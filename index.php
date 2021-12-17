@@ -26,7 +26,7 @@ $longitude = "SELECT resposta_text,
 //Monta o selecet completo
 $query = $conn->prepare("SELECT ind_resp.resposta_text,
               (CASE WHEN ind_itens.titulo = 'Instituição' THEN lat.resposta_text ELSE latitude END) AS latitude,
-              (CASE WHEN ind_itens.titulo = 'Instituição' THEN lat.resposta_text ELSE longitude END) AS longitude
+              (CASE WHEN ind_itens.titulo = 'Instituição' THEN lon.resposta_text ELSE longitude END) AS longitude
               FROM indicadores_secoes_itens ind_itens
               JOIN indicadores_respostas ind_resp ON (ind_resp.id_secao_item = ind_itens.id)
               JOIN indicadores ind ON (ind.id = ind_resp.id_indicador)
@@ -91,12 +91,12 @@ foreach ($result as $key => $item) {
         $longitude = $dados->longitude;
 
         echo "
-      <tr>
-        <td>$identificador</td>
-        <td>$latitude</td>
-        <td>$longitude</td>
-      </tr>
-      ";
+          <tr>
+            <td>$identificador</td>
+            <td>$latitude</td>
+            <td>$longitude</td>
+          </tr>
+        ";
       }
       ?>
     </table>
