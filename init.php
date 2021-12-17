@@ -1,5 +1,8 @@
 <?php
 
+//Define a constante com a raiz do projeto
+define('__PATH__', __DIR__);
+
 //Arquivo com os dados do banco de dados
 $config_dir = 'config.ini';
 
