@@ -10,5 +10,6 @@ array (
 );
 ~~~
 
+> **Observação:** Resolvi aplicar uma pequena estrutura HTML para melhor visualização dos dados
 
 
