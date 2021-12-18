@@ -3,15 +3,33 @@
   margin: 0;
 }
 
+html,
 body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #cdcdcd;
+}
+
+nav {
+  background-color: #0e398c;
 }
 
 .container {
   width: 100%;
   height: 400px;
-  padding-top: 40px;
+  padding-top: 6.5rem;
 }
 
-#row_collumn {
+#head-table {
+  background-color: #694be8;
+}
+
+#head-row {
+  color: white !important;
+  text-align: center;
+}
+
+#collumn {
   text-align: center;
 }
